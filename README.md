@@ -15,7 +15,7 @@ Onde: No arquivo app.js (durante a captura de dados do index.html).
 
 Como previne: Os campos de entrada recebem sanitização básica e as mensagens de erro/sucesso são renderizadas utilizando textContent no lugar de innerHTML, reduzindo o risco de injeção de scripts maliciosos.
 
-Broken Access Control (Falhas de Controle de Acesso):
+# Broken Access Control (Falhas de Controle de Acesso):
 
 Onde: No arquivo dashboard.html e na lógica de validação do app.js.
 
