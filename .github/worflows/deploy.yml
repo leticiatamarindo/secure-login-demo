@@ -1,0 +1,34 @@
+name: Deploy to Cloud VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Copiar ficheiros para o servidor
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: leticia
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "index.html,dashboard.html,app.js"
+          target: "/home/leticia/deploy"
+
+      - name: Atualizar Nginx em Produção
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: leticia
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo mkdir -p /home/leticia/deploy
+            sudo cp /home/leticia/deploy/* /var/www/html/
+            sudo systemctl reload nginx
