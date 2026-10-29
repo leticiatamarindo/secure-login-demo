@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protótipo demonstrativo de login seguro apenas no front-end.">
+  <title>Entrar | Secure Login Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #172033;
+      background: #f3f6fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    main {
+      width: min(100%, 440px);
+      padding: 36px;
+      border: 1px solid #e1e7f0;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 16px 48px rgb(22 38 68 / 9%);
+    }
+
+    h1 { margin: 0 0 8px; font-size: 1.8rem; }
+    p { line-height: 1.55; }
+    .intro { margin: 0 0 24px; color: #526078; }
+    form { display: grid; gap: 16px; }
+    label { display: grid; gap: 7px; font-weight: 600; }
+
+    input {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #b9c4d5;
+      border-radius: 8px;
+      color: inherit;
+      font: inherit;
+    }
+
+    input:focus {
+      outline: 3px solid rgb(49 94 251 / 20%);
+      border-color: #315efb;
+    }
+
+    button {
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #234ed8;
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover { background: #193db3; }
+    .hint { margin: -8px 0 0; color: #526078; font-size: 0.9rem; }
+    .notice {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #fff6df;
+      color: #624600;
+      font-size: 0.9rem;
+    }
+
+    #login-message { min-height: 1.5em; margin: 0; }
+    #login-message[data-state="error"] { color: #a32121; }
+    #login-message[data-state="success"] { color: #17653a; }
+  </style>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Entrar</h1>
+    <p class="intro">Acesse o protótipo Secure Login Demo.</p>
+
+    <form id="login-form" novalidate>
+      <label for="username">
+        Usuário
+        <input id="username" name="username" type="text" autocomplete="username" required maxlength="80">
+      </label>
+
+      <label for="password">
+        Senha
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+      </label>
+
+      <p class="hint">A senha de demonstração deve ter pelo menos 12 caracteres, incluindo maiúscula, minúscula, número e símbolo.</p>
+      <button type="submit">Entrar</button>
+      <p id="login-message" role="status" aria-live="polite"></p>
+    </form>
+
+    <aside class="notice">
+      Protótipo somente de front-end: qualquer usuário não vazio com uma senha que atenda aos critérios é aceito. Não use credenciais reais.
+    </aside>
+  </main>
+</body>
+</html>

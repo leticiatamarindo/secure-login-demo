@@ -1,0 +1,25 @@
+# Dependências e pastas do sistema
+node_modules/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+*.key
+*.cert
+
+# Configurações do Editor de Código (VS Code, etc)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos de sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db
