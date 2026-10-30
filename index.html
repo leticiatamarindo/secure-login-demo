@@ -4,87 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Protótipo demonstrativo de login seguro apenas no front-end.">
+  <link rel="stylesheet" href="css/style.css">
   <title>Entrar | Secure Login Demo</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #e0e0e0;
-      background: #121212;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    main {
-      width: min(100%, 440px);
-      padding: 36px;
-      border: 1px solid #333333;
-      border-radius: 16px;
-      background: #1e1e1e;
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-    }
-
-    h1 { margin: 0 0 8px; font-size: 1.8rem; color: #ffffff; }
-    p { line-height: 1.55; }
-    .intro { margin: 0 0 24px; color: #a0aabf; }
-    form { display: grid; gap: 16px; }
-    label { display: grid; gap: 7px; font-weight: 600; color: #e0e0e0; }
-
-    input {
-      width: 100%;
-      padding: 12px 13px;
-      border: 1px solid #444444;
-      border-radius: 8px;
-      background: #2a2a2a;
-      color: #ffffff;
-      font: inherit;
-    }
-
-    input:focus {
-      outline: 3px solid rgba(49, 94, 251, 0.4);
-      border-color: #5b7cfa;
-    }
-
-    button {
-      padding: 12px 16px;
-      border: 0;
-      border-radius: 8px;
-      background: #551461;
-      color: #fff;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover { background: #791a8a; }
-    .hint { margin: -8px 0 0; color: #a0aabf; font-size: 0.9rem; }
-    
-    .notice {
-      margin-top: 20px;
-      padding: 12px;
-      border-radius: 8px;
-      background: #332b00;
-      color: #ffda6a;
-      font-size: 0.9rem;
-      border: 1px solid #4d4100;
-    }
-
-    #login-message { min-height: 1.5em; margin: 0; }
-    #login-message[data-state="error"] { color: #ff6b6b; }
-    #login-message[data-state="success"] { color: #4caf50; }
-  </style>
+  
   <script src="app.js" defer></script>
 </head>
-<body>
+<body class="index-page">
   <main>
     <h1>Entrar</h1>
     <p class="intro">Acesse o protótipo Secure Login Demo.</p>

@@ -4,65 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página interna demonstrativa do Secure Login Demo.">
+  <link rel="stylesheet" href="css/style.css">
   <title>Painel | Secure Login Demo</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #e0e0e0;
-      background: #121212;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      padding: 24px;
-      visibility: hidden;
-    }
-
-    main {
-      width: min(100%, 760px);
-      margin: 8vh auto;
-      padding: 36px;
-      border: 1px solid #333333;
-      border-radius: 16px;
-      background: #1e1e1e;
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-    }
-
-    h1 { margin-top: 0; color: #ffffff; }
-    p { color: #a0aabf; line-height: 1.6; }
-
-    button {
-      padding: 11px 16px;
-      border: 0;
-      border-radius: 8px;
-      background: #d32f2f;
-      color: #fff;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover { background: #b71c1c; }
-    
-    .notice { 
-      margin-top: 24px; 
-      font-size: 0.9rem; 
-      color: #8893a8;
-    }
-  </style>
+  
   <script src="app.js" defer></script>
 </head>
-<body>
+<body class="dashboard-page">
   <main>
-    <h1>Painel interno</h1>
-    <p>Você está na área de demonstração. Nenhuma informação de conta ou dado real é exibido nesta página.</p>
-    <button id="logout-button" type="button">Sair</button>
+    <div class="topo">
+      <h1 id="user-greeting">Olá!</h1>
+      <button id="logout-button" type="button">Sair</button>
+    </div>
+
+    <div class="pomodoro-container">
+      <h2>Timer Pomodoro</h2>
+      <div class="pomodoro-modes">
+          <button id="pomodoro-reset">Pomodoro</button>
+          <button id="pomodoro-short">Pausa Curta</button>
+          <button id="pomodoro-long">Pausa Longa</button>
+      </div>
+      <div id="pomodoro-display">25:00</div>
+      <div class="pomodoro-controls">
+          <!-- O botão Iniciar/Pausar é um só e mudará dinamicamente via JS -->
+          <button id="pomodoro-toggle" class="btn-start">Iniciar</button>
+          <!-- O botão de Reset fica ao lado com um símbolo Unicode -->
+          <button id="pomodoro-reset-action" class="btn-reset" title="Resetar Timer">↺</button>
+      </div>
+    </div>
+    
+    <div class="pomodoro-section">
+      <h2>A Técnica Pomodoro</h2>
+      <p>A Técnica Pomodoro é um método de gerenciamento de tempo que divide o trabalho em blocos de foco intenso, projetado para aumentar a produtividade e combater a exaustão mental. Ao trabalhar em intervalos curtos, você treina seu cérebro para manter a concentração e evita a procrastinação natural.</p>
+      <h3>Como aplicar na prática</h3>
+      <ul>
+        <li><strong>Escolha o seu foco:</strong> Defina uma única tarefa clara para realizar.</li>
+        <li><strong>Inicie o cronômetro:</strong> Programe 25 minutos (um "Pomodoro") e dedique-se exclusivamente a essa demanda, fechando abas extras e ignorando o celular.</li>
+        <li><strong>Faça uma pausa curta:</strong> Assim que o tempo acabar, pare imediatamente e descanse por 5 minutos. Levante, beba água ou apenas alongue o corpo.</li>
+        <li><strong>Repita e recarregue:</strong> Após completar quatro blocos de 25 minutos, faça uma pausa mais longa de 15 a 30 minutos para uma recuperação mental completa.</li>
+      </ul>
+      <p>Esse ciclo simples transforma o tempo em um aliado em vez de uma pressão constante, criando um ritmo sustentável que mantém sua mente fresca e a entrega ágil ao longo de todo o dia.</p>
+    </div>
+    
     <p class="notice">A proteção desta página é apenas uma verificação no navegador. Um sistema real precisa validar a sessão no servidor em cada recurso protegido.</p>
+    <p class="notice-v2">Você está na área de demonstração. Nenhuma informação de conta ou dado real é exibido nesta página.</p>
   </main>
 </body>
 </html>

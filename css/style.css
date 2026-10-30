@@ -1,0 +1,238 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e0e0e0;
+  background: #121212;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+}
+
+body.index-page { 
+  display: grid;
+  place-items: center;
+}
+
+/* --- Estilos exclusivos da tela Dashboard --- */
+body.dashboard-page {
+  visibility: hidden; /* Mantém a proteção contra flashes antes da checagem de sessão */
+}
+
+body.dashboard-page main {
+  width: min(100%, 760px); /* Garante o layout mais largo e espaçoso */
+  margin: 8vh auto;
+  padding: 36px 36px;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  background: #1e1e1e; /* Mantém o mesmo fundo da caixa do login */
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+body.dashboard-page h1 { 
+  margin-top: 0; 
+  color: #ffffff; 
+}
+
+body.dashboard-page p { 
+  color: #a0aabf; 
+  line-height: 1.6; 
+}
+
+body.dashboard-page .topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Botão específico do Dashboard (Logout vermelho) */
+body.dashboard-page button#logout-button {
+    
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #d32f2f;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+body.dashboard-page button#logout-button:hover { 
+  background: #b71c1c; 
+}
+
+body.dashboard-page .notice { 
+  margin-top: 24px; 
+  font-size: 0.9rem; 
+  color: #8893a8;
+}
+
+/* --- Estilos base (Index) --- */
+main {
+  width: min(100%, 440px);
+  padding: 36px;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  background: #1e1e1e;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+h1 { margin: 0 0 8px; font-size: 1.8rem; color: #ffffff; }
+p { line-height: 1.55; }
+.intro { margin: 0 0 24px; color: #a0aabf; }
+form { display: grid; gap: 16px; }
+label { display: grid; gap: 7px; font-weight: 600; color: #e0e0e0; }
+
+input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #ffffff;
+  font: inherit;
+}
+
+input:focus {
+  outline: 3px solid rgba(49, 94, 251, 0.4);
+  border-color: #5b7cfa;
+}
+
+button {
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #551461;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover { background: #791a8a; }
+
+.hint { margin: -8px 0 0; color: #a0aabf; font-size: 0.9rem; }
+
+.notice {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #332b00;
+  color: #ffda6a;
+  font-size: 0.9rem;
+  border: 1px solid #4d4100;
+}
+
+body.dashboard-page .notice {
+  margin: 24px auto 24px;
+  background: rgba(3, 169, 244, 0.1);
+  color: #64b5f6;
+  border: 1px solid rgba(3, 169, 244, 0.3);
+  max-width: 90%;
+}
+
+body.dashboard-page .notice-v2 {
+  margin: 24px auto 24px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #332b00;
+  color: #ffda6a;
+  border: 1px solid #4d4100;
+  font-size: 0.9rem;
+  max-width: 90%;
+}
+
+#login-message { min-height: 1.5em; margin: 0; }
+#login-message[data-state="error"] { color: #ff6b6b; }
+#login-message[data-state="success"] { color: #4caf50; }
+
+/* --- Timer Pomodoro --- */
+.pomodoro-container {
+    margin: 32px 0;
+    padding: 24px;
+    background: #2a2a2a;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.pomodoro-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #a0aabf;
+}
+
+#pomodoro-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #03a9f4;
+    margin: 16px 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.pomodoro-modes {
+    margin-top: 12px; 
+    display: flex; 
+    gap: 8px; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pomodoro-controls {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.pomodoro-controls button {
+    width: auto;
+    padding: 8px 16px;
+    background: #333333;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+.pomodoro-controls button:hover {
+    background: #444444;
+}
+
+#pomodoro-short { background: #ff9800; border: none; }
+#pomodoro-short:hover { background: #f57c00; }
+#pomodoro-long { background: #9c27b0; border: none; }
+#pomodoro-long:hover { background: #7b1fa2; }
+#pomodoro-reset { background: #555555; border: none; }
+
+.btn-start { background: #4caf50 !important; }
+.btn-start:hover { background: #43a047 !important; }
+.btn-pause { background: #ff9800 !important; }
+.btn-pause:hover { background: #f57c00 !important; }
+
+.btn-reset {
+    background: #555555 !important;
+    font-size: 1.2rem !important;
+    padding: 8px 12px !important;
+}
+.btn-reset:hover { background: #777777 !important; }
+
+@media (max-width: 425px) {
+    .pomodoro-modes {
+        flex-direction: column;
+    }
+    .pomodoro-modes button {
+        width: 100%;
+    }
+    .topo {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}

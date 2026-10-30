@@ -21,7 +21,7 @@ Onde: No arquivo dashboard.html e na lógica de validação do app.js.
 
 Como previne: Foi implementada uma checagem de sessão demonstrativa. Se o usuário tentar acessar o painel diretamente pela URL sem a flag de autenticação válida no sessionStorage, ele é imediatamente redirecionado de volta para a tela de login.
 
-# Identification and Authentication Failures (Falhas de Identificação e Autenticação):
+# Authentication Failures (Falhas de Identificação):
 
 Onde: No arquivo app.js (durante o evento de login e logout).
 
